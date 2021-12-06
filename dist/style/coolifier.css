@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #1f1f1f;
+  color: white;
+  height: 100%;
+  margin: 0;
+  font-family: "Readex Pro" ,Verdana, sans-serif;
+  line-height: 1.5; 
+
+  color: #fff;
+    text-shadow: 8px 0 0 #000, 0 1px 1px #000, 0 1px 0 #000, 1px 0 0 #000;
+
+}
+  body#backdrop {
+    background: url(../pictures/background.jpg);
+    background-attachment: fixed;
+    background-size: cover; }
+    
+h1 {font-weight: 580;}
+
+
+h1.header {
+  margin-top: 0;
+  text-align: center;
+  font-size: 6.0rem; }
+
+.icon a {
+  color: rgb(250, 250, 250);
+    position: absolute;
+    left: 1860px;
+    top: 920px;
+}
+
+a:hover:before{
+  transition: width 0.1s ease-in-out;
+  content: "My GitHub! ";
+  position: absolute;
+  bottom: 1.0px;
+  right: 55px;
+}
+  
+
+main {
+  padding: 4rem;
+  min-height: calc(100vh - 60px); }
+
+  main .icon {
+  margin-top: 1rem; }
+
+  main .icon a {
+  padding: 0.4rem; }
+
+  main .icon a:hover {
+  color: #ff00dd;
+  transition: all 1.2s ease-in-out; }
+        
