@@ -6,11 +6,7 @@ body {
   color: white;
   height: 100%;
   margin: 0;
-  font-family: "Readex Pro" ,Verdana, sans-serif;
-  line-height: 1.5; 
-
-  color: #fff;
-    text-shadow: 8px 0 0 #000, 0 1px 1px #000, 0 1px 0 #000, 1px 0 0 #000;
+  
 
 }
   body#backdrop {
@@ -24,6 +20,13 @@ h1 {font-weight: 580;}
 h1.header {
   margin-top: 0;
   text-align: center;
+
+
+  font-family: "Readex Pro" ,Verdana, sans-serif;
+  line-height: 1.5; 
+
+  color: #fff;
+  text-shadow: 8px 0 0 #000, 0 1px 1px #000, 0 1px 0 #000, 1px 0 0 #000;
   font-size: 6.0rem; }
 
 .icon a {
@@ -36,6 +39,9 @@ h1.header {
 a:hover:before{
   transition: width 0.1s ease-in-out;
   content: "My GitHub! ";
+  font-family: "Readex Pro" ,Verdana, sans-serif;
+  line-height: 1.5; 
+
   position: absolute;
   bottom: 1.0px;
   right: 55px;
@@ -66,8 +72,7 @@ main {
     font-family: "Readex Pro" ,Verdana, sans-serif;
     line-height: 1.8; 
     text-align: center;
-    
-
+    text-justify: calc();
     margin: auto;
     
 
@@ -82,11 +87,12 @@ main {
     resize: none;
   } 
 
- button {
+  button {
   position: fixed;
-  left: 90.85vh;
+   left: 90.80vh;
     bottom: 35vh;
-  background-color: #3183fd; /* Green */
+
+  background-color: #3183fd; 
   border: none;
   border-radius: 25px;
   color: white;
@@ -96,9 +102,4 @@ main {
   display: inline-block;
   font-size: 16px;
   font-family: "Readex Pro" ,Verdana, sans-serif;
-
-  
 }
-
-
-  
