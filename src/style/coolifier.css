@@ -55,4 +55,45 @@ main {
   main .icon a:hover {
   color: #cf4dbe;
   transition: all 1.2s ease-in-out; }
-        
+
+  textarea{
+    position: fixed;
+    left: 78.3vh;
+    bottom: 50vh;
+
+    font-family: "Readex Pro" ,Verdana, sans-serif;
+    line-height: 1.8; 
+    text-align: center;
+    
+
+    margin: auto;
+    display: block;
+
+    width: 20%;
+    height: 5%;
+    
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    background-color: #f8f8f8;
+    font-size: 20px;
+    resize: none;
+  } 
+
+ button {
+  position: fixed;
+  left: 91vh;
+    bottom: 35vh;
+  background-color: #45b96c; /* Green */
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Readex Pro" ,Verdana, sans-serif;
+}
+
+  
