@@ -61,13 +61,15 @@ main {
     left: 78.3vh;
     bottom: 50vh;
 
+    vertical-align:middle;
+
     font-family: "Readex Pro" ,Verdana, sans-serif;
     line-height: 1.8; 
     text-align: center;
     
 
     margin: auto;
-    display: block;
+    
 
     width: 20%;
     height: 5%;
@@ -82,9 +84,9 @@ main {
 
  button {
   position: fixed;
-  left: 91vh;
+  left: 90.85vh;
     bottom: 35vh;
-  background-color: #45b96c; /* Green */
+  background-color: #3183fd; /* Green */
   border: none;
   border-radius: 25px;
   color: white;
@@ -94,6 +96,9 @@ main {
   display: inline-block;
   font-size: 16px;
   font-family: "Readex Pro" ,Verdana, sans-serif;
+
+  
 }
+
 
   
