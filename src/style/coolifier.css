@@ -38,7 +38,7 @@ h1.header {
 
 a:hover:before{
   transition: width 0.1s ease-in-out;
-  content: "My GitHub! ";
+  content: "My GitHub!";
   font-family: "Readex Pro" ,Verdana, sans-serif;
   line-height: 1.5; 
 
@@ -88,6 +88,7 @@ main {
   } 
 
   button {
+    cursor: pointer;
   position: fixed;
    left: 90.80vh;
     bottom: 35vh;

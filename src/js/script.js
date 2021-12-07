@@ -6,53 +6,76 @@ const allCharacters = {
 };
 
 
-
 function generatePassword() {
 
-    let length = 12; //the default length of the password with no parameters changed
+    let length = 10; //the default length of the password with no parameters changed 
     let password = [];
 
-    let previous = 0;
+   //initial password generation
     for (i = 0; i < length; i++) {
         let randomizer = Math.floor(Math.random() * 26); //sets randomizer bounds from 0 to 26 (inclusive)
 
         password.push(allCharacters.lowerCase[randomizer]);
         previous = randomizer;
-
     }
 
-    let passwordString = (preventMultipleOccurance(password)); //if there are characters that repeat in the password, replace duplicates
+    let temp = password.join("");
 
-    document.getElementById("area").value = passwordString.join("");
-    console.log(`Generated: ${passwordString.join("")}`)
+    if(duplicateCheck(password)){
+        console.log("--------------------------")
+        console.log(`***${temp}***`)
+        console.log('this one had duplicates')
+    } else {
+        console.log("--------------------------")
+        console.log(`did not have duplicates`)
+    }
+
+    while (duplicateCheck(password)) {
+        password = replaceDuplicate(password);
+    }
+
+    document.getElementById("area").value = password.join("");
+    console.log(`Generated: ${password.join("")}`)
 }
 
 
-function preventMultipleOccurance(array) {
-    for (i = 0; i < array.length; i++) { //loops through the array containing the password
 
+function duplicateCheck(array) { //function that checks if the passed password array contains any duplicates
+
+    let counter = 0;
+    for (i = 0; i < array.length; i++) {
         let current = array[i];
 
         for (j = i + 1; j < array.length; j++) {
             let consecutive = array[j];
 
-            if (current == consecutive) {
+            if (current === consecutive) {
+                counter++;
+                break;
+            }
+        }
+    }
+    if (counter >= 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-                for (j = i + 1; j < array.length; j++) {
-                    let consecutive = array[j];
 
-                    if (current === consecutive) {
-                        array[j] = allCharacters.lowerCase[(Math.floor(Math.random() * 26))];
 
-                        while (array[j] === current) {
-                            array[j] = allCharacters.lowerCase[(Math.floor(Math.random() * 26))];
-                        }
-                    }
-                }
+function replaceDuplicate(array) { //function that removes duplicate element from array
+    for (i = 0; i < array.length; i++){
+        let current = array[i];
 
+        for (j = i + 1; j < array.length; j++) {
+            let consecutive = array[j];
+
+            if(current === consecutive){
+                let randomizer = Math.floor(Math.random() * 26);
+                array[j] = (allCharacters.lowerCase[randomizer]);
             }
         }
     }
     return array;
 }
-
