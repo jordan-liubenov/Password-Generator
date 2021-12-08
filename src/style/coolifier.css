@@ -64,8 +64,7 @@ main {
     text-align: center;
        
     width: 20%;
-    height: 5%;
-    
+   
     border: 2px solid #ccc;
     border-radius: 25px;
     background-color: #f8f8f891;
@@ -99,12 +98,10 @@ main {
 .slider{
   position: relative;
   
-  
-  margin-top: -20VH;
-
+  margin-top: 2vh;
   width: 13%;
   
-  height: 10px;
+  
   background: #d3d3d3;
   border-radius: 25px;
   outline: none;
@@ -128,4 +125,5 @@ label {
   text-align:center;
   line-height: -2.0; 
   
+  display:block
 }
