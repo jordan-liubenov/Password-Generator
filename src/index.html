@@ -21,16 +21,16 @@
     <main id="home">
       <h1 class="header">
         Password Generator
+        <div id="textBox">
+          <textarea id="area" name="area" rows="1" cols="4" readonly>Password will be generated here.</textarea>
+          <div id = "generateButton"> 
+            <button class="button" onclick="generatePassword()">Generate!</button>
+          </div>
+
+          </div>
       </h1>
 
-      <div id="textBox">
-      <textarea id="area" name="area" rows="5" cols="10" readonly>Password will be generated here. </textarea>
-      </div>
-
-      <div id = "generateButton"> 
-        <button type="button" onclick="generatePassword()">Generate!</button>
-      </div>
-
+      
     <!--   <div class="lengthSlider">
         <p>Password Spicyness:</p>
         <input type="range" min="1" max="24" value="12">

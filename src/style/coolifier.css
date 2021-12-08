@@ -1,14 +1,6 @@
 * {
   box-sizing: border-box; }
 
-body {
-  background-color: #1f1f1f;
-  color: white;
-  height: 100%;
-  margin: 0;
-  
-
-}
   body#backdrop {
     background: url(../pictures/background.jpg);
     background-attachment: fixed;
@@ -31,16 +23,16 @@ h1.header {
 
 .icon a {
   color: rgb(250, 250, 250);
-    position: absolute;
-    left: 1860px;
-    top: 920px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 a:hover:before{
   transition: width 0.1s ease-in-out;
   content: "My GitHub!";
   font-family: "Readex Pro" ,Verdana, sans-serif;
-  line-height: 1.5; 
+  line-height: 1.2; 
 
   position: absolute;
   bottom: 1.0px;
@@ -63,36 +55,28 @@ main {
   transition: all 1.2s ease-in-out; }
 
   textarea{
-    position: fixed;
-    left: 78.3vh;
-    bottom: 50vh;
-
-    vertical-align:middle;
-
+    position: relative;
+   
+    margin-top: 220px;
     font-family: "Readex Pro" ,Verdana, sans-serif;
     line-height: 1.8; 
     text-align: center;
-    text-justify: calc();
-    margin: auto;
     
-
+    
     width: 20%;
     height: 5%;
     
-    box-sizing: border-box;
+    
     border: 2px solid #ccc;
     border-radius: 25px;
-    background-color: #f8f8f8;
+    background-color: #f8f8f891;
     font-size: 20px;
     resize: none;
   } 
 
   button {
-    cursor: pointer;
-  position: fixed;
-   left: 90.80vh;
-    bottom: 35vh;
-
+  cursor: pointer;
+  position: relative;   
   background-color: #3183fd; 
   border: none;
   border-radius: 25px;
@@ -103,4 +87,9 @@ main {
   display: inline-block;
   font-size: 16px;
   font-family: "Readex Pro" ,Verdana, sans-serif;
+}
+
+ .button:active{
+  transform: scale(0.95);
+   box-shadow: -2px 11px 11px -2px rgba(24, 112, 228, 0.24);
 }

@@ -19,17 +19,6 @@ function generatePassword() {
         previous = randomizer;
     }
 
-    let temp = password.join("");
-
-    if(duplicateCheck(password)){
-        console.log("--------------------------")
-        console.log(`***${temp}***`)
-        console.log('this one had duplicates')
-    } else {
-        console.log("--------------------------")
-        console.log(`did not have duplicates`)
-    }
-
     while (duplicateCheck(password)) {
         password = replaceDuplicate(password);
     }
@@ -41,7 +30,6 @@ function generatePassword() {
 
 
 function duplicateCheck(array) { //function that checks if the passed password array contains any duplicates
-
     let counter = 0;
     for (i = 0; i < array.length; i++) {
         let current = array[i];
