@@ -6,12 +6,19 @@ const allCharacters = {
 };
 
 
-function generatePassword() {
+let slider = document.getElementById("lengthRange");
+let output = document.getElementById("sliderLabel");
+output.innerHTML = slider.value;
+slider.oninput = function () {
+output.innerHTML = this.value;
+} 
 
-    let length = 10; //the default length of the password with no parameters changed 
+
+function generatePassword() {
+    let length = slider.value; //the default length of the password with no parameters changed 
     let password = [];
 
-   //initial password generation
+    //initial password generation
     for (i = 0; i < length; i++) {
         let randomizer = Math.floor(Math.random() * 26); //sets randomizer bounds from 0 to 26 (inclusive)
 
@@ -24,7 +31,7 @@ function generatePassword() {
     }
 
     document.getElementById("area").value = password.join("");
-    console.log(`Generated: ${password.join("")}`)
+    console.log(`Generated password : ${password.join("")} with a length of ${length} symbols`)
 }
 
 
@@ -53,13 +60,13 @@ function duplicateCheck(array) { //function that checks if the passed password a
 
 
 function replaceDuplicate(array) { //function that removes duplicate element from array
-    for (i = 0; i < array.length; i++){
+    for (i = 0; i < array.length; i++) {
         let current = array[i];
 
         for (j = i + 1; j < array.length; j++) {
             let consecutive = array[j];
 
-            if(current === consecutive){
+            if (current === consecutive) {
                 let randomizer = Math.floor(Math.random() * 26);
                 array[j] = (allCharacters.lowerCase[randomizer]);
             }

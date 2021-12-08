@@ -6,20 +6,21 @@
     background-attachment: fixed;
     background-size: cover; }
     
-h1 {font-weight: 580;}
 
 
 h1.header {
   margin-top: 0;
   text-align: center;
 
+  font-weight: 580;
+  color: #fff;
+  text-shadow: 8px 0 0 #000, 0 1px 1px #000, 0 1px 0 #000, 1px 0 0 #000;
+  font-size: 6.0rem;
 
   font-family: "Readex Pro" ,Verdana, sans-serif;
   line-height: 1.5; 
 
-  color: #fff;
-  text-shadow: 8px 0 0 #000, 0 1px 1px #000, 0 1px 0 #000, 1px 0 0 #000;
-  font-size: 6.0rem; }
+ }
 
 .icon a {
   color: rgb(250, 250, 250);
@@ -61,11 +62,9 @@ main {
     font-family: "Readex Pro" ,Verdana, sans-serif;
     line-height: 1.8; 
     text-align: center;
-    
-    
+       
     width: 20%;
     height: 5%;
-    
     
     border: 2px solid #ccc;
     border-radius: 25px;
@@ -76,7 +75,8 @@ main {
 
   button {
   cursor: pointer;
-  position: relative;   
+  position: relative; 
+  
   background-color: #3183fd; 
   border: none;
   border-radius: 25px;
@@ -92,4 +92,40 @@ main {
  .button:active{
   transform: scale(0.95);
    box-shadow: -2px 11px 11px -2px rgba(24, 112, 228, 0.24);
+}
+
+
+
+.slider{
+  position: relative;
+  
+  
+  margin-top: -20VH;
+
+  width: 13%;
+  
+  height: 10px;
+  background: #d3d3d3;
+  border-radius: 25px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  
+}
+
+.slider:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.lengthRange,
+label {
+    font: 1rem "Readex Pro", sans-serif;
+    font-weight: 180;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0 0 #000, 0 0px 0px #000, 0 0px 0 #000, 0px 0 0 #000;
+  text-align:center;
+  line-height: -2.0; 
+  
 }

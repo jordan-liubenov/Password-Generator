@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style/coolifier.css">
-    <title>Password Generator</title>
-   
-  </head>
 
-  <body id="backdrop">
-    <div class="overlay"></div>
-    
-    <main id="home">
-      <h1 class="header">
-        Password Generator
-        <div id="textBox">
-          <textarea id="area" name="area" rows="1" cols="4" readonly>Password will be generated here.</textarea>
-          <div id = "generateButton"> 
-            <button class="button" onclick="generatePassword()">Generate!</button>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-          </div>
-      </h1>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style/coolifier.css">
+  <title>Password Generator</title>
 
-      
-    <!--   <div class="lengthSlider">
-        <p>Password Spicyness:</p>
-        <input type="range" min="1" max="24" value="12">
-      </div> -->
+</head>
 
-      <div class="icon">
-        <a href="https://github.com/jordan-liubenov">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
+<body id="backdrop">
+  <div class="overlay"></div>
+
+  <main id="home">
+    <h1 class="header">
+      Password Generator
+      <div id="textBox">
+        <textarea id="area" name="area" rows="1" cols="1" readonly>Password will be generated here.</textarea>
+
+        <div class="lengthSlider">
+          
+          <input type="range" min="6" max="26"  value="13" class="slider" id = "lengthRange">  
+          <label for="lengthRange" id = "sliderLabel"></label>
+
+        </div>
+
+        <div id="generateButton">
+          <button class="button" onclick="generatePassword()">Generate!</button>
+        </div>
+
       </div>
 
-    </main>
-    <script src="js/script.js"></script>
-  </body>
+    
+
+    </h1>
+
+
+
+    <div class="icon">
+      <a href="https://github.com/jordan-liubenov">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+    </div>
+
+  </main>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
