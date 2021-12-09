@@ -12,6 +12,8 @@ h1.header {
   margin-top: 0;
   text-align: center;
 
+
+  
   font-weight: 580;
   color: #fff;
   text-shadow: 8px 0 0 #000, 0 1px 1px #000, 0 1px 0 #000, 1px 0 0 #000;
@@ -94,7 +96,6 @@ main {
 }
 
 
-
 .slider{
   position: relative;
   
@@ -127,3 +128,52 @@ label {
   
   display:block
 }
+
+.checkboxOne{
+  position: absolute;
+  top: 50vh;
+  right: 48vh;
+}
+.checkboxOne, label{
+  text-align: center;
+  font: 1.2rem "Readex Pro", sans-serif;
+    font-weight: 200;
+}
+
+.checkboxTwo{
+  position: absolute;
+  top: 50vh;
+  left: 50vh;
+}
+.checkboxTwo, label{
+  text-align: center;
+  font: 1.2rem "Readex Pro", sans-serif;
+    font-weight: 200;
+}
+
+.checkboxThree{
+  position: absolute;
+  top: 60vh;
+  left: 46.4vh;
+}
+.checkboxThree, label{
+  text-align: center;
+  font: 1.2rem "Readex Pro", sans-serif;
+    font-weight: 200;
+}
+
+.checkboxFour{
+  position: absolute;
+  top: 60vh;
+  right: 44vh;
+}
+.checkboxFour, label{
+  text-align: center;
+  font: 1.2rem "Readex Pro", sans-serif;
+    font-weight: 200;
+}
+
+
+
+
+
