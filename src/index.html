@@ -17,46 +17,47 @@
 
   <main id="home">
     <h1 class="header">
-      Password Generator
+      Pa$$w0rd G3n3r@t0r
       <div id="textBox">
-        <textarea id="area" name="area" rows="1" cols="1" readonly>Password will be generated here.</textarea>       
+        <textarea id="area" name="area" rows="1" cols="1" readonly>Password will be generated here.</textarea>   
+           
         <div class="lengthSlider">
           <input type="range" min="6" max="26" value="13" class="slider" id="lengthRange">
           <label for="lengthRange" id="sliderLabel"></label>
+          <label for="sliderLabel" id="spicy">Length (characters)</label> 
         </div>
 
-        <div id="generateButton">
-          
           <button class="button" onclick="generatePassword()">Generate!</button>
+   
 
-        
+          <div class= "checkboxes">
+
+            <label class="container">Include Digits
+              <input type="checkbox" id = "digitBox"  onclick="checkDigitBox()">
+              <span class="checkmark"></span>
+            </label>
+      
+          <label class="container">Include Uppercase
+            <input type="checkbox" id = "upperBox" onclick="checkUpperBox()">
+            <span class="checkmark"></span>
+          </label>   
+          <label class="container">Include Special Chars
+            <input type="checkbox" id = "specialBox" onclick="checkSpecialBox()">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Non-duplicate Alphabeticals
+            <input type="checkbox" id = "duplicateBox" onclick="checkDuplicateBox()">
+            <span class="checkmark"></span>
+          </label>
         </div>
-        
+
+
       </div>
 
     </h1>
 
-    <div class="checkboxOne">
-      <input type="checkbox" id="upperBox" name="upperCase" value="ValueOne">  
-      <label for="upperBox"> Include Uppercase</label><br> 
-    </div>
+  
 
-
-    <div class="checkboxTwo">
-      <input type="checkbox" id="digitBox" name="digits" value="ValueTwo">  
-      <label for="digitbox"> Include Digits</label><br> 
-    </div>
-
-
-    <div class="checkboxThree">
-      <input type="checkbox" id="specialBox" name="specials" value="ValueThree">  
-      <label for="digitbox"> Include Special Chars</label><br> 
-    </div>
-    
-    <div class="checkboxFour">
-      <input type="checkbox" id="nonDupe" name="noDupe" value="ValueFour">  
-      <label for="digitbox"> Non-duplicate alphabeticals</label><br> 
-    </div>
 
 
     <div class="icon">

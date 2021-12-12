@@ -1,10 +1,13 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box; 
+  
+}
 
   body#backdrop {
     background: url(../pictures/background.jpg);
     background-attachment: fixed;
-    background-size: cover; }
+    background-size: cover;
+     }
     
 
 
@@ -60,7 +63,7 @@ main {
   textarea{
     position: relative;
    
-    margin-top: 220px;
+    margin-top: 175px;
     font-family: "Readex Pro" ,Verdana, sans-serif;
     line-height: 1.8; 
     text-align: center;
@@ -86,7 +89,7 @@ main {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   font-family: "Readex Pro" ,Verdana, sans-serif;
 }
 
@@ -100,80 +103,47 @@ main {
   position: relative;
   
   margin-top: 2vh;
-  width: 13%;
+  width: 20%;
   
   
   background: #d3d3d3;
   border-radius: 25px;
   outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  
+
 }
 
 .slider:hover {
-  opacity: 1;
   cursor: pointer;
 }
 
 .lengthRange,
 label {
+  position: relative;
     font: 1rem "Readex Pro", sans-serif;
-    font-weight: 180;
+    font-weight: 380;
   color: rgb(255, 255, 255);
   text-shadow: 0px 0 0 #000, 0 0px 0px #000, 0 0px 0 #000, 0px 0 0 #000;
   text-align:center;
   line-height: -2.0; 
-  
+  width: 100%;
   display:block
+  
 }
 
-.checkboxOne{
+.checkboxes{
+  padding-top: 15px;
+  padding-bottom: 15px;
   position: absolute;
-  top: 50vh;
-  right: 48vh;
-}
-.checkboxOne, label{
+  left: 74.3vh;
+
   text-align: center;
-  font: 1.2rem "Readex Pro", sans-serif;
-    font-weight: 200;
+  background-color: rgba(68, 136, 226, 0.192);
+  border-radius: 20px;
+  width: 50vh;
+  font-size: 2rem;
 }
 
-.checkboxTwo{
-  position: absolute;
-  top: 50vh;
-  left: 50vh;
+.container{
+  font-size: 20px;
 }
-.checkboxTwo, label{
-  text-align: center;
-  font: 1.2rem "Readex Pro", sans-serif;
-    font-weight: 200;
-}
-
-.checkboxThree{
-  position: absolute;
-  top: 60vh;
-  left: 46.4vh;
-}
-.checkboxThree, label{
-  text-align: center;
-  font: 1.2rem "Readex Pro", sans-serif;
-    font-weight: 200;
-}
-
-.checkboxFour{
-  position: absolute;
-  top: 60vh;
-  right: 44vh;
-}
-.checkboxFour, label{
-  text-align: center;
-  font: 1.2rem "Readex Pro", sans-serif;
-    font-weight: 200;
-}
-
-
-
-
 
