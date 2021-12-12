@@ -24,7 +24,7 @@ h1.header {
 
   font-family: "Readex Pro" ,Verdana, sans-serif;
   line-height: 1.5; 
-
+  
  }
 
 .icon a {
@@ -128,22 +128,30 @@ label {
   width: 100%;
   display:block
   
+  
 }
 
 .checkboxes{
   padding-top: 15px;
   padding-bottom: 15px;
   position: absolute;
-  left: 74.3vh;
-
+  
+  display:-webkit-box;
+  width: 20%;
+  margin: 0 auto;
   text-align: center;
-  background-color: rgba(68, 136, 226, 0.192);
-  border-radius: 20px;
-  width: 50vh;
+  margin-left:120px;
+  margin-top: 45px;
   font-size: 2rem;
+ 
 }
 
 .container{
+  background-color: rgba(68, 136, 226, 0.192);
+  border-radius: 20px;
   font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+
 

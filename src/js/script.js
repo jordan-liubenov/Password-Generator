@@ -1,7 +1,7 @@
 const allCharacters = {
     lowerCase: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
     upperCase: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
-    numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    numbers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
     specialChars: ['+', '-', '&', '|', '!', '(', ')', '{', '}', '[', ']', '^', '~', '*', '?', ':']
 };
 
@@ -23,46 +23,42 @@ slider.oninput = function () {
 
 function generatePassword() {
     let length = slider.value;
+    
+
     let password = [];
 
     //initial password generation
     for (i = 0; i < length; i++) {
         let randomizer = Math.floor(Math.random() * 26);
 
-        let decide = Math.floor(Math.random() * 10);
-        
-        if(5 < decide){
-            password.push(allCharacters.lowerCase[randomizer]);
-        } else {
-            password.push(allCharacters.upperCase[randomizer]);
-        }
+        password.push(allCharacters.lowerCase[randomizer]);
     }
 
 
-
-    if (document.querySelector('#upperBox:checked') !== null) {
-        document.getElementById("area").value = "the upperCase box";
-
-    } if (document.querySelector('#specialBox:checked') !== null) {
-        document.getElementById("area").value = "the specialCase box";
-
-    } if (document.querySelector('#duplicateBox:checked') !== null) { //no duplicates parameter
-        while (duplicateCheck(password)) { //runs algorithm for finding and replacing any a-z duplicates
-            password = replaceDuplicate(password);
-        }
+    if (cbUpper.checked) {
+        password = upperCaseGeneration(password, length);
         document.getElementById("area").value = password.join("");
 
-    } if (document.querySelector('#digitBox:checked') !== null) {
-        document.getElementById("area").value = "the digitCase box ";
+ 
 
-    } if (document.querySelector('#specialBox:checked') !== null) {
-        document.getElementById("area").value = "the specialCase box ";
+    } if (cbDuplicate.checked) { //no duplicates parameter
+      // while (duplicateCheck(password)) { //runs algorithm for finding and replacing any a-z duplicates
+      //     password = replaceDuplicate(password);
+      // }
+       document.getElementById("area").value = password.join("");
 
-    } else {
+    } if (cbDigit.checked) {
+        password = digitGeneration(password, length);
         document.getElementById("area").value = password.join("");
-    }
 
-    if (checkZeroParameters) {
+    } if (cbSpecial.checked) {
+        password = specialCharGeneration(password, length);
+        document.getElementById("area").value = password.join("");
+
+    } 
+
+    if (checkZeroParameters()) {
+        document.getElementById("area").value = password.join("")
         console.log(`Generated password : ${password.join("")} with a length of ${length} symbols`)
     }
 }
@@ -77,9 +73,11 @@ function duplicateCheck(array) { //function that checks if the passed password a
         for (j = i + 1; j < array.length; j++) {
             let consecutive = array[j].toLowerCase();
 
-            if (current === consecutive) {
-                counter++;
-                break;
+            if (checkIfAlphabetical(current) && checkIfAlphabetical(consecutive)) {
+                if (current === consecutive) {
+                    counter++;
+                    break;
+                }
             }
         }
     }
@@ -96,7 +94,7 @@ function replaceDuplicate(array) { //function that removes duplicate element fro
     for (i = 0; i < array.length; i++) {
         let current = array[i];
 
-        if (typeof (current) === 'string') {
+        if (checkIfAlphabetical(current)) {
             for (j = i + 1; j < array.length; j++) {
                 let consecutive = array[j];
 
@@ -111,17 +109,47 @@ function replaceDuplicate(array) { //function that removes duplicate element fro
 }
 
 
+function upperCaseGeneration(password, length) {
+    for (i = 1; i <= length; i++) {
+        let decide = Math.floor(Math.random() * 26);
+        let rand = Math.floor(Math.random() * 26);
 
-function generateWithParameters(rand){
-    let decide = Math.floor(Math.random() * (length / 2));
-        
-        if(decide < (length / 2)){
-            password.push(allCharacters.lowerCase[rand]);
+        let currentIndex = password.indexOf(password[i]);
+        if (decide < 10) {
+            password[currentIndex] = allCharacters.lowerCase[rand];
         } else {
-            password.push(allCharacters.numbers[rand]);
+            password[currentIndex] = allCharacters.upperCase[rand];
         }
+    }
+    return password;
 }
 
+function digitGeneration(password, length){
+    for(i = 1; i <= length; i++){
+        let decide = Math.floor(Math.random() * 26);
+        let rand = Math.floor(Math.random() * 26);
+
+        let currentIndex = password.indexOf(password[i]);
+        if (decide < 10) {
+            password[currentIndex] = allCharacters.numbers[rand];
+        } 
+    }
+    return password;
+}
+
+
+function specialCharGeneration(password, length){
+    for(i = 1; i <= length; i++){
+        let decide = Math.floor(Math.random() * 26);
+        let rand = Math.floor(Math.random() * 26);
+
+        let currentIndex = password.indexOf(password[i]);
+        if (decide < 10) {
+            password[currentIndex] = allCharacters.specialChars[rand];
+        } 
+    }
+    return password;
+}
 
 
 
@@ -129,9 +157,7 @@ function generateWithParameters(rand){
 function checkDigitBox() {
     if (cbDigit.checked) {
         console.log(`digitBox checked`);
-    } else {
-        console.log(`digitBox unchecked`)
-    }
+    } 
 }
 
 function checkUpperBox() {
@@ -159,15 +185,16 @@ function checkDuplicateBox() {
 }
 
 function checkZeroParameters() {
-    if (!checkDigitBox && !checkSpecialBox && !checkUpperBox && !checkDuplicateBox) {
+    if (!cbDigit.checked && !cbSpecial.checked && !cbDuplicate.checked && !cbUpper.checked) {
         return true;
     }
 }
 
-function checkIfAlphabetical(string){ //if ascii value of current letter is alphabetic, return true
-    if(string >= 97 && string <= 122 || string >= 65 && string <= 90){
+function checkIfAlphabetical(string) { //if value is contained in the alphabetic arrays, return true
+    if (allCharacters.lowerCase.includes(string) || allCharacters.upperCase.includes(string)) {
         return true;
-    } else {
+    }
+    else {
         return false;
     }
 }
