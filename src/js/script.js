@@ -30,10 +30,9 @@ function generatePassword() { //password generation functioin
         let randomizer = Math.floor(Math.random() * 26);
 
         password.push(allCharacters.lowerCase[randomizer]);
-
     }
 
-    checkParameters(password, length); //function that checks if any parameters were selected
+    checkParameters(password, length); //function that checks if any parameters were selected and re-generates the password accordingly
 
     if (checkZeroParameters()) {
         document.getElementById("area").value = password.join("")
@@ -46,12 +45,12 @@ function generatePassword() { //password generation functioin
 function duplicateCheck(array) { //function that checks if the passed password array contains any duplicates
     let counter = 0;
     for (i = 0; i < array.length; i++) {
-        let current = array[i].toLowerCase();
+        let current = array[i];
 
-        for (j = i + 1; j < array.length; j++) {
-            let consecutive = array[j].toLowerCase();
+        if (checkIfAlphabetical(current)) {
+            for (j = i + 1; j < array.length; j++) {
+                let consecutive = array[j];
 
-            if (checkIfAlphabetical(current) && checkIfAlphabetical(consecutive)) {
                 if (current === consecutive) {
                     counter++;
                     break;
@@ -78,7 +77,11 @@ function replaceDuplicate(array) { //function that removes duplicate element fro
 
                 if (current === consecutive) {
                     let randomizer = Math.floor(Math.random() * 26);
-                    array[j] = (allCharacters.lowerCase[randomizer]);
+                    if (current === current.toUpperCase()) {
+                        array[j] = (allCharacters.upperCase[randomizer]);
+                    } else if (current === current.toLowerCase()) {
+                        array[j] = (allCharacters.lowerCase[randomizer]);
+                    }
                 }
             }
         }
@@ -107,11 +110,11 @@ function upperCaseGeneration(password, length) {
 
 function digitGeneration(password, length) {
     for (i = 1; i <= length; i++) {
-        let decide = Math.floor(Math.random() * 20);
+        let decide = Math.floor(Math.random() * 30);
         let rand = Math.floor(Math.random() * 10);
 
         let currentIndex = password.indexOf(password[i]);
-        if (decide < 10) {
+        if (decide < 15) {
             password[currentIndex] = allCharacters.numbers[rand];
         }
     }
@@ -122,11 +125,11 @@ function digitGeneration(password, length) {
 
 function specialCharGeneration(password, length) {
     for (i = 1; i <= length; i++) {
-        let decide = Math.floor(Math.random() * 20);
+        let decide = Math.floor(Math.random() * 30);
         let rand = Math.floor(Math.random() * 16);
 
         let currentIndex = password.indexOf(password[i]);
-        if (decide < 10) {
+        if (decide < 20) {
             password[currentIndex] = allCharacters.specialChars[rand];
         }
     }
@@ -155,21 +158,19 @@ function checkIfAlphabetical(string) { //if value is contained in the alphabetic
 function checkParameters(password, length) {
     if (cbUpper.checked) {
         password = upperCaseGeneration(password, length);
-        document.getElementById("area").value = password.join("");
 
     } if (cbDuplicate.checked) { //no duplicates parameter
-        // while (duplicateCheck(password)) { //runs algorithm for finding and replacing any a-z duplicates
-        //     password = replaceDuplicate(password);
-        // }
-        document.getElementById("area").value = password.join("");
+
+        while (duplicateCheck(password)) { //runs algorithm for finding and replacing any a-z duplicates
+            password = replaceDuplicate(password);
+        }
 
     } if (cbDigit.checked) {
         password = digitGeneration(password, length);
-        document.getElementById("area").value = password.join("");
 
     } if (cbSpecial.checked) {
         password = specialCharGeneration(password, length);
-        document.getElementById("area").value = password.join("");
 
     }
+    document.getElementById("area").value = password.join("");
 }
