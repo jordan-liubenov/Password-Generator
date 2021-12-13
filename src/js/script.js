@@ -21,10 +21,8 @@ slider.oninput = function () {
 
 
 
-function generatePassword() {
+function generatePassword() { //password generation functioin
     let length = slider.value;
-    
-
     let password = [];
 
     //initial password generation
@@ -32,30 +30,10 @@ function generatePassword() {
         let randomizer = Math.floor(Math.random() * 26);
 
         password.push(allCharacters.lowerCase[randomizer]);
+
     }
 
-
-    if (cbUpper.checked) {
-        password = upperCaseGeneration(password, length);
-        document.getElementById("area").value = password.join("");
-
- 
-
-    } if (cbDuplicate.checked) { //no duplicates parameter
-      // while (duplicateCheck(password)) { //runs algorithm for finding and replacing any a-z duplicates
-      //     password = replaceDuplicate(password);
-      // }
-       document.getElementById("area").value = password.join("");
-
-    } if (cbDigit.checked) {
-        password = digitGeneration(password, length);
-        document.getElementById("area").value = password.join("");
-
-    } if (cbSpecial.checked) {
-        password = specialCharGeneration(password, length);
-        document.getElementById("area").value = password.join("");
-
-    } 
+    checkParameters(password, length); //function that checks if any parameters were selected
 
     if (checkZeroParameters()) {
         document.getElementById("area").value = password.join("")
@@ -109,9 +87,10 @@ function replaceDuplicate(array) { //function that removes duplicate element fro
 }
 
 
+
 function upperCaseGeneration(password, length) {
     for (i = 1; i <= length; i++) {
-        let decide = Math.floor(Math.random() * 26);
+        let decide = Math.floor(Math.random() * 20);
         let rand = Math.floor(Math.random() * 26);
 
         let currentIndex = password.indexOf(password[i]);
@@ -124,65 +103,37 @@ function upperCaseGeneration(password, length) {
     return password;
 }
 
-function digitGeneration(password, length){
-    for(i = 1; i <= length; i++){
-        let decide = Math.floor(Math.random() * 26);
-        let rand = Math.floor(Math.random() * 26);
+
+
+function digitGeneration(password, length) {
+    for (i = 1; i <= length; i++) {
+        let decide = Math.floor(Math.random() * 20);
+        let rand = Math.floor(Math.random() * 10);
 
         let currentIndex = password.indexOf(password[i]);
         if (decide < 10) {
             password[currentIndex] = allCharacters.numbers[rand];
-        } 
+        }
     }
     return password;
 }
 
 
-function specialCharGeneration(password, length){
-    for(i = 1; i <= length; i++){
-        let decide = Math.floor(Math.random() * 26);
-        let rand = Math.floor(Math.random() * 26);
+
+function specialCharGeneration(password, length) {
+    for (i = 1; i <= length; i++) {
+        let decide = Math.floor(Math.random() * 20);
+        let rand = Math.floor(Math.random() * 16);
 
         let currentIndex = password.indexOf(password[i]);
         if (decide < 10) {
             password[currentIndex] = allCharacters.specialChars[rand];
-        } 
+        }
     }
     return password;
 }
 
 
-
-//checkbox *check if ticked* functions
-function checkDigitBox() {
-    if (cbDigit.checked) {
-        console.log(`digitBox checked`);
-    } 
-}
-
-function checkUpperBox() {
-    if (cbUpper.checked) {
-        console.log(`upperBox checked`);
-    } else {
-        console.log(`upperBox unchecked`)
-    }
-}
-
-function checkSpecialBox() {
-    if (cbSpecial.checked) {
-        console.log(`specialBox checked`);
-    } else {
-        console.log(`specialBox unchecked`)
-    }
-}
-
-function checkDuplicateBox() {
-    if (cbDuplicate.checked) {
-        console.log(`duplicateBox checked`);
-    } else {
-        console.log(`duplicateBox unchecked`)
-    }
-}
 
 function checkZeroParameters() {
     if (!cbDigit.checked && !cbSpecial.checked && !cbDuplicate.checked && !cbUpper.checked) {
@@ -196,5 +147,29 @@ function checkIfAlphabetical(string) { //if value is contained in the alphabetic
     }
     else {
         return false;
+    }
+}
+
+
+
+function checkParameters(password, length) {
+    if (cbUpper.checked) {
+        password = upperCaseGeneration(password, length);
+        document.getElementById("area").value = password.join("");
+
+    } if (cbDuplicate.checked) { //no duplicates parameter
+        // while (duplicateCheck(password)) { //runs algorithm for finding and replacing any a-z duplicates
+        //     password = replaceDuplicate(password);
+        // }
+        document.getElementById("area").value = password.join("");
+
+    } if (cbDigit.checked) {
+        password = digitGeneration(password, length);
+        document.getElementById("area").value = password.join("");
+
+    } if (cbSpecial.checked) {
+        password = specialCharGeneration(password, length);
+        document.getElementById("area").value = password.join("");
+
     }
 }
