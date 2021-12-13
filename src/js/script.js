@@ -129,7 +129,7 @@ function specialCharGeneration(password, length) { //generates and replaces rand
         let rand = Math.floor(Math.random() * 16);
 
         let currentIndex = password.indexOf(password[i]);
-        if (decide < 20) {
+        if (decide < 10) {
             password[currentIndex] = allCharacters.specialChars[rand];
         }
     }
