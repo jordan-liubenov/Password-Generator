@@ -19,46 +19,43 @@
     <h1 class="header">
       P4$$w0rd G3n3r@t0r
       <div id="textBox">
-        <textarea id="area" name="area" rows="1" cols="1" readonly>Password will be generated here.</textarea>   
-           
+        <textarea id="area" name="area" rows="1" cols="1" readonly>Password will be generated here.</textarea>
+
         <div class="lengthSlider">
           <input type="range" min="6" max="26" value="13" class="slider" id="lengthRange">
           <label for="lengthRange" id="sliderLabel"></label>
-          <label for="sliderLabel" id="spicy">Length (characters)</label> 
+          <label for="sliderLabel" id="spicy">Length (characters)</label>
         </div>
 
-          <button class="button" onclick="generatePassword()">Generate!</button>
-   
+        <button class="button" onclick="generatePassword()">Generate!</button>
 
-          <div class= "checkboxes">
+        <div class="checkboxes">
 
-            <label class="container">Include Digits:
-              <input type="checkbox" id = "digitBox"  onclick="checkDigitBox()">
-              <span class="checkmark"></span>
-            </label>
-      
+          <label class="container">Include Digits:
+            <input type="checkbox" id="digitBox">
+            <span class="checkmark"></span>
+          </label>
+
           <label class="container">Include Uppercase:
-            <input type="checkbox" id = "upperBox" onclick="checkUpperBox()">
-            <span class="checkmark"></span>
-          </label>   
-          <label class="container">Include Special Chars:
-            <input type="checkbox" id = "specialBox" onclick="checkSpecialBox()">
+            <input type="checkbox" id="upperBox" >
             <span class="checkmark"></span>
           </label>
-          <label class="container">Non-duplicate Alphabeticals:
-            <input type="checkbox" id = "duplicateBox" onclick="checkDuplicateBox()">
-            <span class="checkmark"></span>
-          </label>
-        </div>
 
+          <label class="container">Include Special Chars:
+            <input type="checkbox" id="specialBox" >
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Non-duplicate Alphabeticals:
+            <input type="checkbox" id="duplicateBox" >
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
 
       </div>
 
     </h1>
-
-  
-
-
 
     <div class="icon">
       <a href="https://github.com/jordan-liubenov">

@@ -20,8 +20,8 @@ slider.oninput = function () {
 }
 
 
-
-function generatePassword() { //password generation functioin
+//main generation function
+function generatePassword() {
     let length = slider.value;
     let password = [];
 
@@ -58,7 +58,7 @@ function duplicateCheck(array) { //function that checks if the passed password a
             }
         }
     }
-    if (counter >= 1) {
+    if (counter == 1) {
         return true;
     } else {
         return false;
@@ -67,7 +67,7 @@ function duplicateCheck(array) { //function that checks if the passed password a
 
 
 
-function replaceDuplicate(array) { //function that removes duplicate element from array
+function replaceDuplicate(array) { //function that removes duplicate element/s from array
     for (i = 0; i < array.length; i++) {
         let current = array[i];
 
@@ -91,7 +91,7 @@ function replaceDuplicate(array) { //function that removes duplicate element fro
 
 
 
-function upperCaseGeneration(password, length) {
+function upperCaseGeneration(password, length) { //generates and replaces random lowerCase chars with upperCase ones
     for (i = 1; i <= length; i++) {
         let decide = Math.floor(Math.random() * 20);
         let rand = Math.floor(Math.random() * 26);
@@ -108,7 +108,7 @@ function upperCaseGeneration(password, length) {
 
 
 
-function digitGeneration(password, length) {
+function digitGeneration(password, length) { //generates and replaces random characters with digits
     for (i = 1; i <= length; i++) {
         let decide = Math.floor(Math.random() * 30);
         let rand = Math.floor(Math.random() * 10);
@@ -123,7 +123,7 @@ function digitGeneration(password, length) {
 
 
 
-function specialCharGeneration(password, length) {
+function specialCharGeneration(password, length) { //generates and replaces random characters in the password with special chars
     for (i = 1; i <= length; i++) {
         let decide = Math.floor(Math.random() * 30);
         let rand = Math.floor(Math.random() * 16);
@@ -138,14 +138,16 @@ function specialCharGeneration(password, length) {
 
 
 
-function checkZeroParameters() {
+function checkZeroParameters() { //checks if no checkboxes have been ticked
     if (!cbDigit.checked && !cbSpecial.checked && !cbDuplicate.checked && !cbUpper.checked) {
         return true;
     }
 }
 
-function checkIfAlphabetical(string) { //if value is contained in the alphabetic arrays, return true
-    if (allCharacters.lowerCase.includes(string) || allCharacters.upperCase.includes(string)) {
+
+
+function checkIfAlphabetical(arg) { //checks if the passed argument is an element in the alphabet
+    if (allCharacters.lowerCase.includes(arg) || allCharacters.upperCase.includes(arg)) {
         return true;
     }
     else {
@@ -158,19 +160,20 @@ function checkIfAlphabetical(string) { //if value is contained in the alphabetic
 function checkParameters(password, length) {
     if (cbUpper.checked) {
         password = upperCaseGeneration(password, length);
+    }
 
-    } if (cbDuplicate.checked) { //no duplicates parameter
-
+    if (cbDuplicate.checked) { 
         while (duplicateCheck(password)) { //runs algorithm for finding and replacing any a-z duplicates
             password = replaceDuplicate(password);
         }
+    }
 
-    } if (cbDigit.checked) {
+    if (cbDigit.checked) {
         password = digitGeneration(password, length);
+    }
 
-    } if (cbSpecial.checked) {
+    if (cbSpecial.checked) {
         password = specialCharGeneration(password, length);
-
     }
     document.getElementById("area").value = password.join("");
 }
