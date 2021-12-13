@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style/coolifier.css">
+  <title>Password Generator</title>
+
+</head>
+
+<body id="backdrop">
+  <div class="overlay"></div>
+
+  <main id="home">
+    <h1 class="header">
+      P4$$w0rd G3n3r@t0r
+      <div id="textBox">
+        <textarea id="area" name="area" rows="1" cols="1" readonly>Password will be generated here.</textarea>   
+           
+        <div class="lengthSlider">
+          <input type="range" min="6" max="26" value="13" class="slider" id="lengthRange">
+          <label for="lengthRange" id="sliderLabel"></label>
+          <label for="sliderLabel" id="spicy">Length (characters)</label> 
+        </div>
+
+          <button class="button" onclick="generatePassword()">Generate!</button>
+   
+
+          <div class= "checkboxes">
+
+            <label class="container">Include Digits:
+              <input type="checkbox" id = "digitBox"  onclick="checkDigitBox()">
+              <span class="checkmark"></span>
+            </label>
+      
+          <label class="container">Include Uppercase:
+            <input type="checkbox" id = "upperBox" onclick="checkUpperBox()">
+            <span class="checkmark"></span>
+          </label>   
+          <label class="container">Include Special Chars:
+            <input type="checkbox" id = "specialBox" onclick="checkSpecialBox()">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Non-duplicate Alphabeticals:
+            <input type="checkbox" id = "duplicateBox" onclick="checkDuplicateBox()">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+
+      </div>
+
+    </h1>
+
+  
+
+
+
+    <div class="icon">
+      <a href="https://github.com/jordan-liubenov">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+    </div>
+
+  </main>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
