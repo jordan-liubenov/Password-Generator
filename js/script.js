@@ -36,14 +36,13 @@ function generatePassword() {
 
     if (checkZeroParameters()) {
         document.getElementById("area").value = password.join("")
-        console.log(`Generated password : ${password.join("")} with a length of ${length} symbols`)
     }
 }
 
 
 
 function duplicateCheck(array) { //function that checks if the passed password array contains any duplicates
-    let counter = 0;
+    hasDuplicate = false;
     for (i = 0; i < array.length; i++) {
         let current = array[i];
 
@@ -52,22 +51,19 @@ function duplicateCheck(array) { //function that checks if the passed password a
                 let consecutive = array[j];
 
                 if (current === consecutive) {
-                    counter++;
-                    break;
+                    hasDuplicate = true;
                 }
             }
         }
     }
-    if (counter == 1) {
-        return true;
-    } else {
-        return false;
-    }
+    return hasDuplicate;
 }
 
 
 
 function replaceDuplicate(array) { //function that removes duplicate element/s from array
+    let before = array.join(" ");
+    console.log(`${before}`)
     for (i = 0; i < array.length; i++) {
         let current = array[i];
 
@@ -86,6 +82,8 @@ function replaceDuplicate(array) { //function that removes duplicate element/s f
             }
         }
     }
+    let after = array.join(" ");
+    console.log(`${after}`)
     return array;
 }
 
@@ -159,21 +157,40 @@ function checkIfAlphabetical(arg) { //checks if the passed argument is an elemen
 
 function checkParameters(password, length) {
     if (cbUpper.checked) {
+        if (cbDuplicate.checked) {
+            while (duplicateCheck(password)) {
+                password = replaceDuplicate(password);
+            }
+        }
         password = upperCaseGeneration(password, length);
     }
 
-    if (cbDuplicate.checked) { 
-        while (duplicateCheck(password)) { //runs algorithm for finding and replacing any a-z duplicates
+    if (cbDuplicate.checked) {
+        while (duplicateCheck(password)) {
             password = replaceDuplicate(password);
         }
     }
 
     if (cbDigit.checked) {
+        if (cbDuplicate.checked) {
+            while (duplicateCheck(password)) {
+                password = replaceDuplicate(password);
+            }
+        }
         password = digitGeneration(password, length);
     }
 
     if (cbSpecial.checked) {
+        if (cbDuplicate.checked) {
+            while (duplicateCheck(password)) {
+                password = replaceDuplicate(password);
+            }
+        }
         password = specialCharGeneration(password, length);
     }
+
+
+
     document.getElementById("area").value = password.join("");
+    console.log(`Generated password : ${password.join("")} with a length of ${length} symbols`)
 }
