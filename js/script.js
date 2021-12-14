@@ -157,11 +157,6 @@ function checkIfAlphabetical(arg) { //checks if the passed argument is an elemen
 
 function checkParameters(password, length) {
     if (cbUpper.checked) {
-        if (cbDuplicate.checked) {
-            while (duplicateCheck(password)) {
-                password = replaceDuplicate(password);
-            }
-        }
         password = upperCaseGeneration(password, length);
     }
 
@@ -172,20 +167,10 @@ function checkParameters(password, length) {
     }
 
     if (cbDigit.checked) {
-        if (cbDuplicate.checked) {
-            while (duplicateCheck(password)) {
-                password = replaceDuplicate(password);
-            }
-        }
         password = digitGeneration(password, length);
     }
 
     if (cbSpecial.checked) {
-        if (cbDuplicate.checked) {
-            while (duplicateCheck(password)) {
-                password = replaceDuplicate(password);
-            }
-        }
         password = specialCharGeneration(password, length);
     }
 
