@@ -6,6 +6,7 @@ Check it out here: https://jordan-liubenov.github.io/Password-Generator/.
 
 # Selectable parameters:
 **-Adjustable Slider (Sets Length)**
+
 **-Include Digits (adds random digits to the generated password)**
 
 **-Include Special Chars (adds random special characters to the generated password)**
