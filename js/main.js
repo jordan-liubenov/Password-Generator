@@ -174,8 +174,6 @@ function checkParameters(password, length) {
         password = specialCharGeneration(password, length);
     }
 
-
-
     document.getElementById("area").value = password.join("");
     console.log(`Generated password : ${password.join("")} with a length of ${length} symbols`)
 }
