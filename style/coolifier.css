@@ -1,86 +1,71 @@
-* {
-  box-sizing: border-box; 
-  
+body {
+  font-family: "Readex Pro" 
 }
 
-  body#backdrop {
-    background: url(../pictures/lakshmani.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-     }
-    
+body#corpse{
 
+  background: url(../pictures/lakshmani.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
 
-h1.header {
-  margin-top: 0;
+.header {
+  
   text-align: center;
-
-
-  
   font-weight: 580;
-  color: #fff;
-  text-shadow: 8px 0 0 #000, 0 1px 1px #000, 0 1px 0 #000, 1px 0 0 #000;
-  font-size: 6.0rem;
-
-  font-family: "Readex Pro" ,Verdana, sans-serif;
-  line-height: 1.5; 
-  
- }
-
-.icon a {
-  color: rgb(250, 250, 250);
-  position: fixed;
-  bottom: 0;
-  right: 0;
+color: #fff;
+text-shadow: 8px 0 0 #000, 0 1px 1px #000, 0 1px 0 #000, 1px 0 0 #000;
+font-size: 50px;
 }
 
-a:hover:before{
-  transition: width 0.1s ease-in-out;
-  content: "My GitHub!";
+textarea{
+  position: relative;
+ 
+  margin-top: 85px;
   font-family: "Readex Pro" ,Verdana, sans-serif;
-  line-height: 1.2; 
-
-  position: absolute;
-  bottom: 1.0px;
-  right: 55px;
-}
+  line-height: 1.8; 
+  text-align: center;
+     
+  width: 20%;
   
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  background-color: #f8f8f891;
+  font-size: 20px;
+  resize: none;
+} 
 
-main {
-  padding: 4rem;
-  min-height: calc(100vh - 60px); }
+.slider{
+  position: relative;
+  
+  margin-top: 65px;
+  width: 20%;
+  
+  background: #d3d3d3;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+}
 
-  main .icon {
-  margin-top: 1rem; }
+.lengthRange,
+label {
+position: relative;
+  font: 1rem "Readex Pro", sans-serif;
+  font-weight: 380;
+color: rgb(255, 255, 255);
+text-shadow: 0px 0 0 #000, 0 0px 0px #000, 0 0px 0 #000, 0px 0 0 #000;
+text-align:center;
+line-height: -2.0; 
+width: 100%;
+display:block
 
-  main .icon a {
-  padding: 0.4rem; }
+}
 
-  main .icon a:hover {
-  color: #cf4dbe;
-  transition: all 1.2s ease-in-out; }
-
-  textarea{
-    position: relative;
-   
-    margin-top: 175px;
-    font-family: "Readex Pro" ,Verdana, sans-serif;
-    line-height: 1.8; 
-    text-align: center;
-       
-    width: 20%;
-    
-    border: 2px solid #ccc;
-    border-radius: 25px;
-    background-color: #f8f8f891;
-    font-size: 20px;
-    resize: none;
-  } 
-
-  button {
+button {
   cursor: pointer;
   position: relative; 
   
+  margin-top: 25px;
   background-color: #3183fd; 
   border: none;
   border-radius: 25px;
@@ -99,59 +84,48 @@ main {
 }
 
 
-.slider{
-  position: relative;
-  
-  margin-top: 2vh;
-  width: 20%;
-  
-  
-  background: #d3d3d3;
-  border-radius: 25px;
-  outline: none;
-
-}
-
-.slider:hover {
-  cursor: pointer;
-}
-
-.lengthRange,
-label {
-  position: relative;
-    font: 1rem "Readex Pro", sans-serif;
-    font-weight: 380;
-  color: rgb(255, 255, 255);
-  text-shadow: 0px 0 0 #000, 0 0px 0px #000, 0 0px 0 #000, 0px 0 0 #000;
-  text-align:center;
-  line-height: -2.0; 
-  width: 100%;
-  display:block
-  
-  
-}
-
 .checkboxes{
-  padding-top: 15px;
-  padding-bottom: 15px;
-  position: absolute;
+  padding-top: 120px;
   
-  display:-webkit-box;
-  width: 20%;
-  margin: 0 auto;
-  text-align: center;
-  margin-left:120px;
-  margin-top: 45px;
-  font-size: 2rem;
- 
+}
+table {
+  width: 50%;
+  
+}
+table, td {
+  border: 3px solid rgba(243, 243, 243, 0.103);
+  border-radius: 10px;
+  height: 10px;
 }
 
 .container{
-  background-color: rgba(68, 136, 226, 0.192);
-  border-radius: 20px;
+  
+ 
   font-size: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
+.icon a {
+  padding: 0.4rem; }
 
+.icon a:hover {
+  color: #cf4dbe;
+  transition: all 1.2s ease-in-out; }
+
+  .icon a {
+    color: rgb(250, 250, 250);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+  a:hover:before{
+    transition: width 0.1s ease-in-out;
+    content: "My GitHub!";
+    font-family: "Readex Pro" ,Verdana, sans-serif;
+    line-height: 1.2; 
+  
+    position: absolute;
+    bottom: 1.0px;
+    right: 55px;
+  }
