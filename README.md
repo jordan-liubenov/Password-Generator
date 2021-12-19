@@ -2,7 +2,7 @@
 Will generate a password based on the selected parameters!
 
 Check it out here: https://jordan-liubenov.github.io/Password-Generator/.
- ![alt text](<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="40" height="40" />)
+ ![alt text](https://imgur.com/msZTRbQ)
 
 # Selectable parameters:
 **-Adjustable Slider (Sets Length)**
