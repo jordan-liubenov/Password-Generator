@@ -3,7 +3,8 @@ Will generate a password based on the selected parameters!
 
 Check it out here: https://jordan-liubenov.github.io/Password-Generator/.
 
- ![alt text](https://i.imgur.com/msZTRbQ.mp4)
+https://user-images.githubusercontent.com/94224275/146688987-5a20c2f0-f0d7-4261-9981-279c5e514ec2.mp4
+
 
 # Selectable parameters:
 **-Adjustable Slider (Sets Length)**
