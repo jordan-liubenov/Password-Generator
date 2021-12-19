@@ -2,7 +2,7 @@
 Will generate a password based on the selected parameters!
 
 Check it out here: https://jordan-liubenov.github.io/Password-Generator/.
-![alt text](https://i.ibb.co/BwpWy0Q/image.png)
+ ![Alt text](https://cdn.discordapp.com/attachments/677576561335074865/922213564893257758/ezgif.com-gif-maker.mp4)
 
 # Selectable parameters:
 **-Adjustable Slider (Sets Length)**
