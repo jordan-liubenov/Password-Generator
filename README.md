@@ -18,4 +18,5 @@ Check it out here: https://jordan-liubenov.github.io/Password-Generator/.
 
 # Multiple types of screen optimization:
 **-Mobile (Portrait)**
+
 ![alt text](https://media.discordapp.net/attachments/230402282997547008/922176536096931920/Screenshot_20211219-191948_Chrome.jpg?width=329&height=676)
