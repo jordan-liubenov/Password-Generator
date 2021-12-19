@@ -3,7 +3,7 @@ Will generate a password based on the selected parameters!
 
 Check it out here: https://jordan-liubenov.github.io/Password-Generator/.
 
-https://user-images.githubusercontent.com/94224275/146688987-5a20c2f0-f0d7-4261-9981-279c5e514ec2.mp4
+https://user-images.githubusercontent.com/94224275/146689123-0f257321-85f1-429a-ab9d-9341de49b2bd.mp4
 
 
 # Selectable parameters:
