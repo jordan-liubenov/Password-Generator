@@ -19,7 +19,7 @@ Check it out here: https://jordan-liubenov.github.io/Password-Generator/.
 # Multiple types of screen optimization:
 **-Desktop**
 
-(https://i.ibb.co/BwpWy0Q/image.png)
+https://i.ibb.co/BwpWy0Q/image.png
 
 **-Mobile (Portrait)**
 
