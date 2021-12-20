@@ -23,6 +23,6 @@ https://user-images.githubusercontent.com/94224275/146689123-0f257321-85f1-429a-
 
 ![alt text](https://i.ibb.co/BwpWy0Q/image.png)
 
-**-Mobile (Portrait)**
+**-Mobile**
 
 ![alt text](https://media.discordapp.net/attachments/230402282997547008/922176536096931920/Screenshot_20211219-191948_Chrome.jpg?width=329&height=676)
