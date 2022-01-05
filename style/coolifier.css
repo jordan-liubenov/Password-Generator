@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400&display=swap');
+
 body {
   font-family: "Readex Pro" 
 }
@@ -155,7 +157,8 @@ table, td {
     }
     
     textarea{
-      position: relative;
+      display: flex;
+      justify-content: center;
     margin-top: 30px;
       font-family: "Readex Pro" ,Verdana, sans-serif;
       line-height: 1.8; 
@@ -215,6 +218,7 @@ table, td {
      .button:active{
       transform: scale(0.95);
        box-shadow: -2px 11px 11px -2px rgba(24, 112, 228, 0.24);
+       
     }
     
     
