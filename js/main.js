@@ -63,7 +63,6 @@ function duplicateCheck(array) { //function that checks if the passed password a
 
 function replaceDuplicate(array) { //function that removes duplicate element/s from array
     let before = array.join(" ");
-    console.log(`${before}`)
     for (i = 0; i < array.length; i++) {
         let current = array[i];
 
@@ -83,7 +82,6 @@ function replaceDuplicate(array) { //function that removes duplicate element/s f
         }
     }
     let after = array.join(" ");
-    console.log(`${after}`)
     return array;
 }
 
@@ -175,5 +173,4 @@ function checkParameters(password, length) {
     }
 
     document.getElementById("area").value = password.join("");
-    console.log(`Generated password : ${password.join("")} with a length of ${length} symbols`)
 }
