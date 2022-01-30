@@ -5,8 +5,8 @@ body {
 }
 
 body#corpse{
-
-  background: url(../pictures/lakshmani.jpg);
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(68,24,73,1) 35%, rgba(14,95,170,0.9248074229691877) 85%);
   background-attachment: fixed;
   background-size: cover;
 }
